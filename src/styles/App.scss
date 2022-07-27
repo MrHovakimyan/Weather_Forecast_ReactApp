@@ -9,6 +9,11 @@
     url("../media/bg-photo.jpg");
   height: 100vh;
 }
+.container {
+  max-width: 1080px;
+  margin: 0px auto;
+  padding: 20px 0;
+}
 @import url(./_aboutUs.scss);
 @import url(./_currentWeather.scss);
 @import url(./_forecast.scss);

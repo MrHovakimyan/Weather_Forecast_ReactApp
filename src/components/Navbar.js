@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import logo from "../media/weather-logo.png";
+import logo from "../media/weather-logo.jpg";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -9,15 +9,17 @@ const Navbar = () => {
       <Link to="/">
         <img className="navbar-logoImg" src={logo} alt="logo" />
       </Link>
-      <button className="navbar-btn" onClick={() => navigate("/")}>
-        Home
-      </button>
-      <button className="navbar-btn" onClick={() => navigate("/aboutUs")}>
-        About Us
-      </button>
-      <button className="navbar-btn" onClick={() => navigate("/contactUs")}>
-        Contact Us
-      </button>
+      <div className="navbar-buttons-wrpr">
+        <button className="navbar-buttons-wrpr-btn" onClick={() => navigate("/")}>
+          Home
+        </button>
+        <button className="navbar-buttons-wrpr-btn" onClick={() => navigate("/aboutUs")}>
+          About Us
+        </button>
+        <button className="navbar-buttons-wrpr-btn" onClick={() => navigate("/contactUs")}>
+          Contact Us
+        </button>
+      </div>
     </div>
   );
 };

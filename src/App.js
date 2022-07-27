@@ -9,7 +9,7 @@ import "./styles/App.scss";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="container">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
