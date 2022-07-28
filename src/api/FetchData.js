@@ -1,4 +1,3 @@
-import React from "react";
 import { BASE_URL } from "./configs";
 
 export async function FetchData(latitude, longitude) {

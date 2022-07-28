@@ -17,6 +17,9 @@ const Home = () => {
   };
 
   const handleSearch = async (latitude, longitude) => {
+    if (!latitude || !longitude) {
+      alert("Please enter 'Latitude' and 'Longitude' for search!");
+    }
     let results = await FetchData(latitude, longitude);
     return setForecast(results);
   };
@@ -36,6 +39,7 @@ const Home = () => {
   return (
     <>
       <div className="home-title">Upcoming 7 days Forecast</div>
+
       <div className="home-content">
         <div className="home-content-search">
           <input
@@ -66,6 +70,7 @@ const Home = () => {
           </button>
         </div>
       </div>
+
       <div className="home-forecast">
         {forecast &&
           forecast.map((item, index) => (
