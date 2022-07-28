@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FetchData } from "../api/FetchData";
+import { WEEK_DAYS } from "../api/configs";
 
 const Home = () => {
   const [latitude, setLatitude] = useState("");
@@ -15,7 +16,7 @@ const Home = () => {
     setLongitude(longitudeForSearch);
   };
 
-  const loadedData = async (latitude, longitude) => {
+  const handleSearch = async (latitude, longitude) => {
     let results = await FetchData(latitude, longitude);
     return setForecast(results);
   };
@@ -26,41 +27,57 @@ const Home = () => {
     setForecast([]);
   };
 
-  return (
-    <div className="home-content">
-      <div className="home-content-search">
-        <input
-          type="number"
-          placeholder="Enter latitude"
-          value={latitude}
-          onChange={handleLatChange}
-        />
-        <input
-          type="number"
-          placeholder="Enter longitude"
-          value={longitude}
-          onChange={handleLongChange}
-        />
-      </div>
+  // getting next 7 days of the week starting from search day
+  const dayInWeek = new Date().getDay();
+  const forecastDays = WEEK_DAYS.slice(dayInWeek, WEEK_DAYS.length).concat(
+    WEEK_DAYS.slice(0, dayInWeek)
+  );
 
-      <div className="home-content-buttonsWrpr">
-        <button
-          className="home-content-buttonsWrpr-btn"
-          onClick={() => loadedData(latitude, longitude)}
-        >
-          Search
-        </button>
-        <button className="home-content-buttonsWrpr-btn" onClick={handleReset}>
-          Reset
-        </button>
+  return (
+    <>
+      <div className="home-title">Upcoming 7 days Forecast</div>
+      <div className="home-content">
+        <div className="home-content-search">
+          <input
+            type="number"
+            placeholder="Enter latitude"
+            value={latitude}
+            onChange={handleLatChange}
+            className="home-content-search-input"
+          />
+          <input
+            type="number"
+            placeholder="Enter longitude"
+            value={longitude}
+            onChange={handleLongChange}
+            className="home-content-search-input"
+          />
+        </div>
+
+        <div className="home-content-buttonsWrpr">
+          <button
+            className="home-content-buttonsWrpr-btn"
+            onClick={() => handleSearch(latitude, longitude)}
+          >
+            Search
+          </button>
+          <button className="home-content-buttonsWrpr-btn" onClick={handleReset}>
+            Reset
+          </button>
+        </div>
       </div>
-      {forecast &&
-        forecast.map((item, index) => (
-          <div className="home-content-forecast" key={index}>
-            {item}
-          </div>
-        ))}
-    </div>
+      <div className="home-forecast">
+        {forecast &&
+          forecast.map((item, index) => (
+            <div className="home-forecast-items" key={index}>
+              <div className="home-forecast-items-day">{forecastDays[index]}</div>
+              <div className="home-forecast-items-temperature">
+                max temperature: {Math.round(item)} °C
+              </div>
+            </div>
+          ))}
+      </div>
+    </>
   );
 };
 
