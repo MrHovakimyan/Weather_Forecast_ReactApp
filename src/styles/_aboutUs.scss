@@ -1,0 +1,107 @@
+.aboutUs {
+  background-image: url("../media/aboutUs/aboutUs-bg.jpg");
+  background-repeat: no-repeat;
+  height: 100%;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-title {
+      font-size: 38px;
+      text-transform: uppercase;
+      color: rgb(43, 43, 251);
+      font-weight: 600;
+      padding: 10px 0px;
+    }
+    &-horizSeparator {
+      width: 100px;
+      height: 4px;
+      background-color: #140c58;
+    }
+    &-text {
+      font-size: 20px;
+      color: #14524f;
+      font-weight: 400;
+      text-align: center;
+      padding: 15px 0px;
+      max-width: 1000px;
+    }
+  }
+
+  &-iconsWrpr {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0px;
+    &-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &-image {
+        width: 150px;
+        height: 150px;
+      }
+      &-name {
+        font-size: 22px;
+        font-weight: 500;
+        color: #140c58;
+        padding-bottom: 5px;
+      }
+      &-info {
+        width: 50%;
+        font-size: 18px;
+        color: #09187e;
+        font-weight: 400;
+        text-align: center;
+      }
+    }
+  }
+
+  &-ourTeam {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0px;
+    &-infoWrpr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &-title {
+        font-size: 30px;
+        font-weight: 500;
+        color: rgb(43, 43, 251);
+        text-transform: capitalize;
+      }
+      &-text {
+        font-size: 20px;
+        color: #14524f;
+        font-weight: 400;
+        text-align: center;
+        padding: 15px 0px;
+        max-width: 1000px;
+      }
+    }
+
+    &-membersWrpr {
+      display: flex;
+      justify-content: space-around;
+      &-tMember {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &-pic {
+          widows: 250px;
+          height: 150px;
+        }
+        &-name {
+          font-size: 18px;
+          color: #09187e;
+          font-weight: 500;
+        }
+        &-position {
+          color: #09187e;
+        }
+      }
+    }
+  }
+}
