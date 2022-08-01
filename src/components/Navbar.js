@@ -6,8 +6,9 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <div className="navbar">
-      <Link to="/">
-        <img className="navbar-logoImg" src={logo} alt="logo" />
+      <Link to="/" className="navbar-logo">
+        <img className="navbar-logo-img" src={logo} alt="logo" />
+        <span className="navbar-logo-name">WeatherApp</span>
       </Link>
       <div className="navbar-buttons-wrpr">
         <button className="navbar-buttons-wrpr-btn" onClick={() => navigate("/")}>

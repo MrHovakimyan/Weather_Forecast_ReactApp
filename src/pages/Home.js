@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { FetchData } from "../api/FetchData";
 import { WEEK_DAYS } from "../api/configs";
+import Modal from "../components/Modal";
 
 const Home = () => {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
   const [forecast, setForecast] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   const handleLatChange = (evn) => {
     let latitudeForSearch = parseFloat(evn.target.value);
@@ -18,7 +20,7 @@ const Home = () => {
 
   const handleSearch = async (latitude, longitude) => {
     if (!latitude || !longitude) {
-      alert("Please enter 'Latitude' and 'Longitude' for search!");
+      setShowModal(true);
     }
     let results = await FetchData(latitude, longitude);
     return setForecast(results);
@@ -69,8 +71,8 @@ const Home = () => {
             Reset
           </button>
         </div>
+        {showModal && <Modal closeModal={setShowModal} />}
       </div>
-
       <div className="home-forecast">
         {forecast &&
           forecast.map((item, index) => (
