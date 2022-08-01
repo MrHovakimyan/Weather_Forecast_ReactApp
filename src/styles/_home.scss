@@ -1,3 +1,9 @@
+.home {
+  background-image: linear-gradient(90deg, #2d6e7098 0%, #2d6e7042 80%),
+    url("../media/home/home-bg2.jpg");
+  background-repeat: no-repeat;
+  height: 100vh;
+}
 .home-title {
   text-align: center;
   text-transform: capitalize;

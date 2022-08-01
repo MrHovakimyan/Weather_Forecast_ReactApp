@@ -37,7 +37,7 @@ const Home = () => {
   );
 
   return (
-    <>
+    <section className="home">
       <div className="home-title">Upcoming 7 days Forecast</div>
 
       <div className="home-content">
@@ -82,7 +82,7 @@ const Home = () => {
             </div>
           ))}
       </div>
-    </>
+    </section>
   );
 };
 

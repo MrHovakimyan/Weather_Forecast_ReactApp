@@ -42,6 +42,11 @@
         width: 150px;
         height: 150px;
       }
+      &-image:hover,
+      &-name:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
       &-name {
         font-size: 22px;
         font-weight: 500;
@@ -93,12 +98,23 @@
           widows: 250px;
           height: 150px;
         }
+        &-pic:hover {
+          filter: hue-rotate(80deg);
+          border: 3px dashed rgb(29, 127, 226);
+          cursor: pointer;
+          transform: scale(1.1);
+        }
         &-name {
           font-size: 18px;
           color: #09187e;
           font-weight: 500;
         }
         &-position {
+          color: #09187e;
+        }
+        &-position:hover,
+        &-name:hover {
+          cursor: pointer;
           color: #09187e;
         }
       }

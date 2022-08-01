@@ -93,7 +93,7 @@ const AboutUs = () => {
               className="aboutUs-ourTeam-membersWrpr-tMember-pic"
             />
             <div className="aboutUs-ourTeam-membersWrpr-tMember-name">Joyce Hudson</div>
-            <div className="aboutUs-ourTeam-membersWrpr-tMember-position">Founder & Designer</div>
+            <div className="aboutUs-ourTeam-membersWrpr-tMember-position">Meteorologist</div>
           </div>
           {/* Fort Member */}
           <div className="aboutUs-ourTeam-membersWrpr-tMember">
@@ -103,7 +103,9 @@ const AboutUs = () => {
               className="aboutUs-ourTeam-membersWrpr-tMember-pic"
             />
             <div className="aboutUs-ourTeam-membersWrpr-tMember-name">Joyce Hudson</div>
-            <div className="aboutUs-ourTeam-membersWrpr-tMember-position">Founder & Designer</div>
+            <div className="aboutUs-ourTeam-membersWrpr-tMember-position">
+              CEO/Software Engineer
+            </div>
           </div>
         </div>
       </div>
